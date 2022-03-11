@@ -44,7 +44,7 @@
                     <td>{{$person->first_name}}</td>
                     <td>{{$person->last_name}}</td>
                     <td>{{$person->email}}</td>
-                    <td>{{$person->active}}</td>
+                    <td>{{$person->status}}</td>
                 </tr>
             @empty
                 <tr>

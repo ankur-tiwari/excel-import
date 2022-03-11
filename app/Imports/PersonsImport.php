@@ -20,8 +20,8 @@ class PersonsImport implements ToCollection, WithHeadingRow,WithValidation
                 'first_name'=>$row['first_name'],
                 'last_name'=>$row['last_name'],
                 'email'=>$row['email'],
-                'person_prefix'=>$row['person_prefix'],
-                'status'=> $row['status']
+                'person_prefix'=> isset($row['person_prefix']) ? $row['person_prefix'] : '',
+                'status'=> isset($row['status']) ? $row['status'] : 'active'
             ];
             Person::create($data);
         }
@@ -32,7 +32,7 @@ class PersonsImport implements ToCollection, WithHeadingRow,WithValidation
         return[
             'first_name'=>'required',
             'last_name'=>'required',
-            'email_address'=>'required|unique:persons,email',
+            'email'=>'required|unique:persons,email',
         ];
     }
 }

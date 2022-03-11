@@ -10,7 +10,7 @@ use Maatwebsite\Excel\Facades\Excel;
 class PersonController extends Controller
 {
     public function index(){
-        $students = Person::all();
+        $persons = Person::all();
         return view('welcome',compact('persons'));
     }
     public function import(Request $req){
