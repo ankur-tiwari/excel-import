@@ -23,7 +23,7 @@ class PersonsImport implements ToCollection, WithHeadingRow,WithValidation
                 'person_prefix'=>$row['person_prefix'],
                 'status'=> $row['status']
             ];
-            Student::create($data);
+            Person::create($data);
         }
     }
 
